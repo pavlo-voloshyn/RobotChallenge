@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net46</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Voloshyn.Pavlo.RobotChallenge\Voloshyn.Pavlo.RobotChallenge.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Robot.Common">
+      <HintPath>..\Tournament\Robot.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
