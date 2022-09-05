@@ -59,13 +59,13 @@ namespace Voloshyn.Pavlo.RobotChallenge
                     NewRobotEnergy = Constants.EnergyNewRobot
                 };
             }
+            else if (energyFromFightEnemyRobot >= Constants.EnergyToFight && robotToFight != null)
+            {
+                return new MoveCommand() { NewPosition = robotToFight.Position };
+            }
             else if (distanceToNearestStation < Constants.CollectEnergyDistance && nearestStation.Energy > 0)
             {
                 return new CollectEnergyCommand();
-            }
-            else if (energyFromFightEnemyRobot >= Constants.MinEnergyToFight && robotToFight != null)
-            {
-                return new MoveCommand() { NewPosition = robotToFight.Position };
             }
             else if (!myRobots.Any(r => FindDistanceHelper.Find(r.Position, nearestStation.Position) == 0))
             {
